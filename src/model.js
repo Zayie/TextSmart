@@ -1,3 +1,11 @@
+// =============================================================================
+//
+// • MODULE/PKG: TextSmart
+// • COPYRIGHT: © Copyright Zayie Software, Inc. 2021
+// • LICENSE: Licensed under the CC0-1.0 License (https://creativecommons.org/publicdomain/zero/1.0)
+//
+// =============================================================================
+
 import Vocabulary from './vocabulary';
 
 /**

@@ -1,18 +1,20 @@
-<p style="text-align: center";><img src="https://i.imgur.com/uVN8IP9.png"></p>
+![](https://i.imgur.com/uVN8IP9.png)
 
-# TextSmart.js
-A compact Javascript library from Zayie, for interpreting and classifying binary and text inputs with machine learning, sorting, ngrams, probability and other engines working together.
+<br>
+
+# TextSmart
+A Javascript library from Zayie for interpreting and classifying binary and text inputs with machine learning, sorting, ngrams, probability and other engines working together.
 
 ## Installation
 To use TS.JS, you'll need to install via source or using a package manager like [NPM](https://npmjs.com), Github NPM, Apt or Yarn.
 
 ```
-gh repo clone Zayie/TextSmart.js
-git clone https://github.com/zayie/textsmart.js
+gh repo clone Zayie/TextSmart
+git clone https://github.com/zayie/textsmart
 
-npm install textsmart.js
-apt-get install textsmart.js
-yarn install textsmart.js
+npm install textsmart
+apt-get install textsmart
+yarn install textsmart
 ```
 
 ## Initalization
@@ -20,8 +22,8 @@ yarn install textsmart.js
 Once you've installed the library and sourced it in your code, just like this. (Use whatever variable you want.)
 
 ```javascript
-const library = require('textsmart.js');
-const tsjs = new library.Classifier();
+const TextSmart = require('textsmart');
+const tsjs = new TextSmart.Classifier();
 ```
 
 ## Usage
@@ -73,10 +75,12 @@ console.log(JSON.stringify(tsjs.predict("Taylor Alison Swift is a multi-Grammy a
 
 ```js
 // Text Scrap #1
+
 What we wanted - Social
 What we got    - Social (21.55%)
 
 // Text Scrap #2
+
 What we wanted - Smart
 What we got    - Smart (59.13%)
 ```

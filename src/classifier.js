@@ -1,6 +1,6 @@
-import XRegExp from 'xregexp'
-import Model from './model'
-import Prediction from './prediction'
+import XRegExp from 'xregexp';
+import Model from './model';
+import Prediction from './prediction';
 
 class Classifier {
     constructor(model = {}) {
@@ -31,11 +31,11 @@ class Classifier {
         input.forEach(string => {
             let tokens = this.tokenize(string)
             if (this._model.vocabulary !== false) tokens = this.vectorize(tokens);
-            if (typeof this._model.data[label] === 'undefined') this._model.data[label] = {};
+            if (typeof this._model.data[output] === 'undefined') this._model.data[output] = {};
             Object.keys(tokens).forEach(index => {
                 let occurrences = tokens[index];
-                if (typeof this._model.data[label][index] === 'undefined') this._model.data[label][index] = 0;
-                this._model.data[label][index] += occurrences;
+                if (typeof this._model.data[output][index] === 'undefined') this._model.data[output][index] = 0;
+                this._model.data[output][index] += occurrences;
             });
         });
         return this;
@@ -57,12 +57,12 @@ class Classifier {
         let tokens = this.tokenize(input);
         if (this.vocabulary !== false) tokens = this.vectorize(tokens);
         let predictions = []
-        Object.keys(this._model.data).forEach(label => {
-            let entry = this._model.data[label]
+        Object.keys(this._model.data).forEach(output => {
+            let entry = this._model.data[output]
             let confidence = this.cosineSimilarity(tokens, entry)
             if (confidence >= minimumConfidence) {
                 predictions.push(new Prediction({
-                    label,
+                    output,
                     confidence
                 }));
             }

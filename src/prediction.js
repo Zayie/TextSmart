@@ -11,8 +11,8 @@ class Prediction {
             confidence: 0,
             ...prediction
         };
-        this._output = prediction.label;
-        this._confidence = prediction.confidence;
+        this.output = prediction.output;
+        this.confidence = prediction.confidence;
     }
 
     /**
@@ -20,13 +20,16 @@ class Prediction {
      *
      * @type {string}
      */
-    get output() {
-        return this._output;
+    getOutput() {
+        return this.output;
     }
 
-    set output(label) {
-        if (typeof label !== 'string') throw new Error('Whoops! Output must be a string.');
-        this._label = label;
+    setOutput(variable) {
+        if (typeof variable !== 'string') {
+            throw new Error('Whoops! Output must be a string.')
+        } else {
+            this.output = variable;
+        }
     }
 
     /**
@@ -34,13 +37,13 @@ class Prediction {
      *
      * @type {number}
      */
-    get confidence() {
-        return this._confidence;
+    getConfidence() {
+        return this.confidence;
     }
 
-    set confidence(confidence) {
-        if (typeof confidence !== 'number') throw new Error('Whoops! confidence must be a number');
-        this._confidence = confidence
+    setConfidence(variable) {
+        if (typeof variable !== 'number') { throw new Error('Whoops! Confidence must be a number.') };
+        this.confidence = variable;
     }
 }
 

@@ -1,7 +1,5 @@
 ![](https://i.imgur.com/uVN8IP9.png)
 
-<br>
-
 # TextSmart
 A Javascript library from Zayie for interpreting and classifying binary and text inputs with machine learning, sorting, ngrams, probability and other engines working together.
 
